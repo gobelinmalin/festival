@@ -83,7 +83,7 @@ router.get("/:idFestival/style", (req, res) => {
   const idParams = req.params.idFestival;
 
   connection.query(
-    "SELECT s.name, s.id_style FROM festival as f INNER JOIN style as s INNER JOIN festival_style as fs ON f.idfestival = fs.id_festival AND s.idstyle = fs.id_style WHERE fs.id_festival = ?",
+    "SELECT s.name, s.idstyle FROM festival as f INNER JOIN style as s INNER JOIN festival_style as fs ON f.idfestival = fs.id_festival AND s.idstyle = fs.id_style WHERE fs.id_festival = ?",
     idParams,
     (err, results) => {
       if (err) {
