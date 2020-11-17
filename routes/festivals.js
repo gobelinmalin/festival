@@ -100,7 +100,7 @@ router.get("/style/:name", (req, res) => {
   const nameParams = req.params.name;
 
   connection.query(
-    "SELECT f.idfestival, f.name, f.description, f.startdate, f.image1, f.image2, f.image3, f.image4, f.url_video, f.city, f.country, f.endDate FROM festival as f INNER JOIN style as s INNER JOIN festival_style as fs ON f.idfestival = fs.id_festival AND s.idstyle = fs.id_style WHERE s.name = ?",
+    "SELECT f.idfestival, f.name, f.description, f.startdate, f.logo, f.image1, f.image2, f.image3, f.image4, f.url_video, f.city, f.country, f.endDate FROM festival as f INNER JOIN style as s INNER JOIN festival_style as fs ON f.idfestival = fs.id_festival AND s.idstyle = fs.id_style WHERE s.name = ?",
     nameParams,
     (err, results) => {
       if (err) {
